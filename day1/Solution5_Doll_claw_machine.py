@@ -5,20 +5,20 @@ def solution(board, moves):
     for move in moves:
         X = 0
         Y = move-1
-        print(f"move = {move}")
-        print(f"Y = {Y}")
-        print(f"X = {X}")
         while board[X][Y] == 0:
+            if X == len(board)-1:
+                break
             X += 1
-        print(f"new_X = {X}")
-        stack.append(board[X][Y])
-        print(board[X][Y])
+        if board[X][Y] != 0:
+            stack.append(board[X][Y])
+
+        if len(stack) > 1:
+            if stack[-1]==stack[-2]:
+                stack.pop(-1)
+                stack.pop(-1)
+                count += 2
 
         board[X][Y] = 0
-
-        print("=======================")
-
-    print(f"stack = {stack}")
 
     return count
 
