@@ -1,3 +1,4 @@
+#해싱
 def solution(genres, plays):
     genre_map = dict()
 
