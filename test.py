@@ -6,3 +6,4 @@ def solution(nums):
         return num_set
     else:
         return int(N)
+ 
