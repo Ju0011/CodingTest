@@ -1,9 +1,11 @@
-def solution(nums):
-    num_set = len(set(nums))
-    N = len(nums) / 2
+import itertools
 
-    if N > num_set:
-        return num_set
-    else:
-        return int(N)
- 
+n, m = map(int, input().split())
+nums = [i for i in range(1, n+1)]
+
+array = itertools.permutations(nums, m)
+
+for i in array:
+    for j in i:
+        print(j, end = ' ')
+    print()
